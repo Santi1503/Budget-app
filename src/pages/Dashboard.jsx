@@ -98,10 +98,10 @@ const Dashboard = () => {
                         <div className="grid-md">
                           <h2>Last Expenses</h2>
                           <Table expenses={expenses.sort((a, b) => b.createdAt - a.createdAt)
-                          .slice(0, 8)} />
+                            .slice(0, 8)} />
                           {expenses.length > 8 && (
                             <Link to="expenses" className="btn btn--dark">
-                            View all expenses
+                              View all expenses
                             </Link>
                           )}
                         </div>
@@ -119,7 +119,7 @@ const Dashboard = () => {
           </div>
         </div>
       ) : (
-         <Intro />)}
+        <Intro />)}
     </>
   )
 }
