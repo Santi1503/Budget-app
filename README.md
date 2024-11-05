@@ -15,10 +15,4 @@ Budget-app es una aplicación de administración financiera diseñada para ayuda
 - **CSS**: Para la estilización de la interfaz, manteniendo un diseño limpio y accesible.
 - **Context API**: Para la gestión de estado global de la aplicación.
 
-## Contribuciones
 
-Las contribuciones son bienvenidas. Si tienes ideas para mejorar la funcionalidad o la interfaz de la aplicación, no dudes en abrir un issue o enviar un pull request.
-
----
-
-¡Gracias por utilizar Budget-app! Esperamos que esta herramienta te sea útil en tu camino hacia una mejor organización financiera.
