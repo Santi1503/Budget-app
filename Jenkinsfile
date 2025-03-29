@@ -8,7 +8,6 @@ pipeline {
         /** DEPLOYMENT **/
         APP_NAME = "budet-app"
         PORT = "3001"
-        ENV = "/home/ubuntu/envs/${APP_NAME}/env"
     }
 
     stages {
@@ -33,7 +32,7 @@ pipeline {
 
                     ssh -i ${AWS_PEM} ${AWS_SERVER} \"
                     # Run the new container
-                    docker run -d --env-file ${ENV} --name ${APP_NAME} --restart always -p ${PORT}:3000 ${SERVER_REG}/${APP_NAME}:${BRANCH_NAME}-${BUILD_ID}
+                    docker run -d --name ${APP_NAME} --restart always -p ${PORT}:3001 ${SERVER_REG}/${APP_NAME}:${BRANCH_NAME}-${BUILD_ID}
                     \"
                     """
             }
