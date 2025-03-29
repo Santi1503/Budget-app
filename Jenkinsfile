@@ -32,7 +32,7 @@ pipeline {
 
                     ssh -i ${AWS_PEM} ${AWS_SERVER} \"
                     # Run the new container
-                    docker run -d --name ${APP_NAME} --restart always -p ${PORT}:3001 ${SERVER_REG}/${APP_NAME}:${BRANCH_NAME}-${BUILD_ID}
+                    docker run -d --name ${APP_NAME} --restart always -p ${PORT}:5173 ${SERVER_REG}/${APP_NAME}:${BRANCH_NAME}-${BUILD_ID}
                     \"
                     """
             }
