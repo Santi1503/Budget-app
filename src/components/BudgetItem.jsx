@@ -56,7 +56,6 @@ const BudgetItem = ({ budget, showDelete = false }) => {
               <BanknotesIcon width={20} />
             </Link>
           </div>
-
         )
       }
     </div>
