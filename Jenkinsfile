@@ -9,9 +9,6 @@ pipeline {
         APP_NAME = "budet-app"
         PORT = "3001"
     }
-    tools {
-        SonarQubeScanner 'sonarqube'
-    }
 
     stages {
         stage('SonarQube Analysis') {
