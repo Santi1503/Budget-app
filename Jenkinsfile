@@ -8,13 +8,14 @@ pipeline {
         /** DEPLOYMENT **/
         APP_NAME = "budet-app"
         PORT = "3001"
+        SCANNER_HOME = tool 'sonarqube'
     }
 
     stages {
         stage('SonarQube Analysis') {
             steps {
                 withSonarQubeEnv('sonarqube') {
-                    sh 'sonar-scanner'
+                    sh "${SCANNER_HOME}/bin/sonar-scanner"
                 }
             }
         }
