@@ -10,7 +10,7 @@ pipeline {
         PORT = "3001"
     }
     tools {
-        sonarQubeScanner 'sonarqube'
+        SonarQubeScanner 'sonarqube'
     }
 
     stages {
