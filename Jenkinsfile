@@ -10,13 +10,13 @@ pipeline {
         PORT = "3001"
     }
     tools {
-        sonarQubeScanner 'SonarQube'
+        sonarQubeScanner 'sonarqube'
     }
 
     stages {
         stage('SonarQube Analysis') {
             steps {
-                withSonarQubeEnv('SonarQube') {
+                withSonarQubeEnv('sonarqube') {
                     sh 'sonar-scanner'
                 }
             }
