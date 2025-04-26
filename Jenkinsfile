@@ -2,15 +2,23 @@ pipeline {
     agent any
     environment {
         SERVER_REG = "balgittuber"
-        AWS_SERVER = "ubuntu@34.235.175.49"
+        AWS_SERVER = "ubuntu@174.129.44.62"
         AWS_PEM = "/var/jenkins_home/aws/santi.pem"
 
         /** DEPLOYMENT **/
         APP_NAME = "budet-app"
         PORT = "3001"
+        SCANNER_HOME = tool 'sonarqube'
     }
 
     stages {
+        stage('SonarQube Analysis') {
+            steps {
+                withSonarQubeEnv('sonarqube') {
+                    sh "${SCANNER_HOME}/bin/sonar-scanner"
+                }
+            }
+        }
         stage('Deploy') {
             when {
                 branch 'master'
