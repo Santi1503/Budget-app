@@ -9,8 +9,18 @@ pipeline {
         APP_NAME = "budet-app"
         PORT = "3001"
     }
+    tools {
+        sonarQubeScanner 'SonarQube'
+    }
 
     stages {
+        stage('SonarQube Analysis') {
+            steps {
+                withSonarQubeEnv('SonarQube') {
+                    sh 'sonar-scanner'
+                }
+            }
+        }
         stage('Deploy') {
             when {
                 branch 'master'
