@@ -27,7 +27,7 @@ pipeline {
                     docker login 
                     docker push ${SERVER_REG}/${APP_NAME}:${BRANCH_NAME}-${BUILD_ID}
 
-                    export KUBECONFIG=/var/jenkins_home/.kube/kubeconfig-fresh.yaml
+                    export KUBECONFIG=/var/jenkins_home/.kube/kubeconfig.yaml
                     kubectl set image deployment/${APP_NAME} ${APP_NAME}=${SERVER_REG}/${APP_NAME}:${BRANCH_NAME}-${BUILD_ID}
                     """
             }
