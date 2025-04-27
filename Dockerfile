@@ -1,9 +1,13 @@
-FROM node
+FROM node as stage-1
 WORKDIR /app
 COPY . .
 
 RUN npm install
 
-EXPOSE 5173
+RUN npm run build
 
-CMD ["npm", "run", "dev", "--", "--host"]
+FROM nginx as production-stage
+
+COPY --from=stage-1 /app/dist /usr/share/nginx/html
+
+EXPOSE 80
